@@ -1,3 +1,5 @@
+//SQL statements
+
 const connection = require('./connection');
 
 const printQuestionMarks = (num) => {

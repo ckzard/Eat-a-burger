@@ -1,3 +1,5 @@
+//object with methods to call to activate sql statements in orm
+
 const orm = require("./../config/orm");
 
 const burger = {

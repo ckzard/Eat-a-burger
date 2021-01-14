@@ -1,3 +1,5 @@
+//Server setup and configuration
+
 const express = require('express');
 // const exphbs = require('express-handlebars');
 

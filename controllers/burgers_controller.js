@@ -1,3 +1,5 @@
+//Express routes, when accessed will trigger sql functions
+
 const express = require('express');
 const burger =  require('./../models/burger');
 
