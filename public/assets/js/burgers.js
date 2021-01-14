@@ -34,4 +34,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
             })
         })
     }
+
+    const createBurgerBtn = document.getElementById('create-form');
+    if (createBurgerBtn) {
+        createBurgerBtn.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const newBurger = {
+                name: document.getElementById("burg").value.trim()
+            }
+
+            fetch('/api/burgers', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',  
+                },
+                body: JSON.stringify(newBurger)
+            }).then(() => {
+                document.getElementById('burg').value = '';
+                location.reload();
+            })
+        })
+    }
 })

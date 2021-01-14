@@ -14,6 +14,14 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/api/burgers', (req, res) => {
+    console.log("someones trying to add a burger")
+    burger.add("burger_name", [req.body.name], (result) => {
+        console.log("a", req.body.name)
+        res.json({id: result.insertId })
+    })
+})
+
 router.put("/api/burgers/:id", (req, res) => {
     const condition = `id = ${req.params.id}`;
 

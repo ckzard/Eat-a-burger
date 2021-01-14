@@ -1,5 +1,15 @@
 const connection = require('./connection');
 
+const printQuestionMarks = (num) => {
+    const arr = [];
+  
+    for (let i = 0; i < num; i++) {
+      arr.push('?');
+    }
+  
+    return arr.toString();
+};
+
 const objToSql = (ob) => {
     const arr = [];
   
@@ -29,6 +39,27 @@ const orm = {
             if (err) throw err;
             cb(result);
         })
+    },
+    insertOne(tableChoice, cols, vals, cb) {
+        console.log("inserting.....")
+        let queryString = `INSERT INTO ${tableChoice}`;
+
+        queryString += ' (';
+        queryString += cols.toString();
+        queryString += ') ';
+        queryString += 'VALUES (';
+        queryString += printQuestionMarks(vals.length);
+        queryString += ') ';
+
+        console.log(queryString);
+
+        connection.query(queryString, vals, (err, result) => {
+        if (err) {
+            throw err;
+        }
+
+        cb(result);
+        });
     },
     updateOne(tableChoice, objColVals, condition, cb) {
         let queryString = `UPDATE ${tableChoice}`;
