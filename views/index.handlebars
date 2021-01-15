@@ -1,33 +1,35 @@
 <h1>Eat-a-burger</h1>
 
 
+<img src="assets/images/burger.gif" alt="">
 
+<div id="burgerSection">
 
-<div>
-  
-  <h2>Burgers to be eaten!</h2>
+    <h2>Burgers to be eaten!</h2>
+
+    <ul class="text-center">
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/burger-block devour=true}}
+    {{/unless}}
+    {{/each}}
+
+  </ul>
+
+  <h2> Burgers that have been devoured!</h2>
 
   <ul class="text-center">
-  {{#each burgers}}
-  {{#unless devoured}}
-  {{> burgers/burger-block devour=true}}
-  {{/unless}}
-  {{/each}}
-
-</ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger-block devour=false}}
+    {{/if}}
+    {{/each}}
+  </ul>
 
 </div>
 
 
-<h2> Burgers that have been devoured!</h2>
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  {{> burgers/burger-block devour=false}}
-  {{/if}}
-  {{/each}}
-</ul>
 
 <h2> Add a burger </h2>
 
