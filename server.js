@@ -3,8 +3,6 @@
 const express = require('express');
 // const exphbs = require('express-handlebars');
 
-const PORT = 8080;
-
 const app = express();
 
 app.use(express.static('public'));
@@ -23,6 +21,6 @@ const routes = require('./controllers/burgers_controller.js');
 app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, () =>
+app.listen(process.env.PORT || 5000, () =>
     console.log(`Server listening on: http://localhost:${PORT}`)
 );
