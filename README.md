@@ -5,6 +5,10 @@
 
   ## Description 
   This is a full stack application, using handlebars for a dynamic front end, node, express and mysql in the backend, and deployed on Heroku. It allows the user to add burgers and eat them.
+  
+  Live application accessible here: https://arcane-gorge-29508.herokuapp.com/
+  
+  ![alt text](public/assets/images/burger.gif)
 
   ## Table of Contents:
   * [Installation](#installation)
@@ -19,7 +23,9 @@
   npm install
 
   ## Usage:
-  run mysql -u root -p -> then enter your password for your local mysql database, then update the schema file with whatever you'd like and the seed the same way, run source schema/seed, update the password field in connection, and then run npm start
+  run mysql -u root -p -> then enter your password for your local mysql database, then update the schema file with whatever you'd like and the seed the same way, run source schema/seed, update the password field in connection, and then run npm start/
+  
+  ![alt text](public/assets/images/screenshot1.png)
 
   ## License:
   This project is licensed under MIT, click the badge to learn more.
