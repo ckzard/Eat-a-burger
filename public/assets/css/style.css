@@ -13,3 +13,12 @@ ul {
     list-style: none
 }
 
+#aliveBurgers {
+    background-color: rgb(236, 171, 149);
+    border: 0.5px solid white;
+}
+
+#devouredBurgers {
+    background-color: rgb(236, 171, 149);
+    border: 0.5px solid white;
+}
